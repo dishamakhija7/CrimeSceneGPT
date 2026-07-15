@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-obsidian text-gray-100 font-sans antialiased overflow-x-hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090E;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A1A2E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5D33F8;
+}
+
+/* Cyber Grid Pattern */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(93, 51, 248, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 51, 248, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+}
+
+.cyber-grid-fine {
+  background-image: 
+    linear-gradient(rgba(0, 242, 254, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.05) 1px, transparent 1px);
+  background-size: 15px 15px;
+  background-position: center center;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(18, 18, 34, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(93, 51, 248, 0.4);
+  box-shadow: 0 0 15px rgba(93, 51, 248, 0.2);
+  background: rgba(18, 18, 34, 0.85);
+  transform: translateY(-2px);
+}
+
+/* Neon Text Glow */
+.text-neon-purple {
+  text-shadow: 0 0 10px rgba(93, 51, 248, 0.6), 0 0 20px rgba(93, 51, 248, 0.3);
+}
+
+.text-neon-teal {
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.6), 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+/* Animations */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scanline {
+  animation: scanline 8s linear infinite;
+}
+
+/* Map scan effect */
+.radar-sweep {
+  background: conic-gradient(from 0deg at 50% 50%, rgba(0, 242, 254, 0.15) 0deg, transparent 90deg, transparent 360deg);
+  animation: rotate-sweep 6s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
